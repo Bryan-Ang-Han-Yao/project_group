@@ -12,8 +12,12 @@ def overheads_identifier():
         overheadsRecords = [] 
         for row in csv_reader:
             overhead_category = row[0].strip()
-            overhead_percentage = (row[1])
-        overheadsRecords.append([overhead_category, overhead_percentage])
+            overhead_percentage = float(row[1])
+            overheadsRecords.append([overhead_category, overhead_percentage])
         highest_overhead = max(overheadsRecords, key=overheadCol)
         highest_category = highest_overhead[0]
         highest_percentage = highest_overhead[1]
+        return f"[HIGHEST OVERHEAD] {highest_category}: {highest_percentage}%\n"
+    
+def overheadCol(overheadRow):
+    return overheadRow[1]
