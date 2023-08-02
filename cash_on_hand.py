@@ -5,13 +5,28 @@ import csv
 file_path = Path.cwd()/"csv_reports"/"Cash_on_Hand.csv"
 
 def COH_identifier():
+    """
+    - Identifies the day(s) with cash on hand deficit or day with highest cash on hand surplus
+    - No parameter is required
+    """
+
+    # Opens and reads the csv file
     with file_path.open(mode = 'r', encoding="UTF-8", newline="") as csv_file:
         csv_reader = csv.reader(csv_file)
 
+        # Skips the header
         next(csv_reader)
+
+        # Create an empty lists to store days with cash on hand deficit
         COH_deficit_days = []
+
+        # Create a variable to store the previous day cash on hand
         prev_day_cash = 0
+
+        # Create a variable to store the highest surplus in cash on hand
         COH_highest_surplus = 0
+
+        # To iterate through the CSV file
         for row in csv_reader:
             day = int(row[0])
             cash_on_hand = int(row[1])
