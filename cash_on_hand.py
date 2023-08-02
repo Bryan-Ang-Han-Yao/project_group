@@ -49,17 +49,38 @@ def COH_identifier():
 
             # Checks if the current day cash on hand is more than previous day cash on hand, exlcuding the first day
             elif cash_on_hand > prev_day_cash and prev_day_cash != 0:
+                
+                # To calculate the surplus between two days
                 COH_surplus = cash_on_hand - prev_day_cash
+
+                # Checks if surplus is more than current highest surplus
                 if COH_surplus > COH_highest_surplus:
+
+                    # Set the new highest surplus
                     COH_highest_surplus = COH_surplus
+
+                    # Retrive the day of the highest surplus
                     COH_highest_surplus_day = row[0]
-                    
+
+            # Set new previous day        
             prev_day_cash = cash_on_hand
-            
+
+        # Checks if "COH_deficit_days" list is empty    
         if len(COH_deficit_days) == 0:
+
+            # Return the formatted the final output using 'f' string
             return f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n[HIGHEST CASH SURPLUS] DAY: {COH_highest_surplus_day}, AMOUNT: USD{COH_highest_surplus}\n"
+        
         else:
+
+            # Declares the variable to format the output
             output = ""
+
+            # To iterate through each days where cash on hand deficit can be found
             for day in COH_deficit_days:
+
+                # Adds each deficit days to the output
                 output += f"[CASH DEFICIT] DAY: {day[0]}, AMOUNT: USD{day[1]}\n"
+
+            # Returns the formatted output
             return output
