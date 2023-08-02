@@ -26,12 +26,4 @@ def COH_identifier():
                     COH_highest_surplus_day = row[0]
                     
             prev_day_cash = cash_on_hand
-
-        if len(COH_deficit_days) == 0:
-            return f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n[HIGHEST CASH SURPLUS] DAY: {COH_highest_surplus_day}, AMOUNT: USD{COH_highest_surplus}\n"
-        
-        else:
-            output = ""
-            for day in COH_deficit_days:
-                output += f"[CASH DEFICIT] DAY: {day[0]}, AMOUNT: USD{day[1]}\n"
-            return output
+            
