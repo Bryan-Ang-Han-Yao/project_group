@@ -28,6 +28,8 @@ def COH_identifier():
 
         # To iterate through the CSV file
         for row in csv_reader:
+
+            # To retrive day number and convert it into an integer
             day = int(row[0])
             cash_on_hand = int(row[1])
             if cash_on_hand < prev_day_cash:
