@@ -31,11 +31,23 @@ def COH_identifier():
 
             # To retrive day number and convert it into an integer
             day = int(row[0])
+
+            # To retrive cash on hand amount and convert it into an integer
             cash_on_hand = int(row[1])
+
+            # Checks if the current day cash on hand is less than previous day cash on hand
             if cash_on_hand < prev_day_cash:
+
+                # To calculate the deficit between two days
                 COH_deficit = prev_day_cash - cash_on_hand
+
+                # To store the the details of the deficit cash on hand by, "day", "COH_deficit"
                 COH_deficit_details = [day, COH_deficit]
+
+                # Appends the cash on hand deficits into a list
                 COH_deficit_days.append(COH_deficit_details)
+
+            # Checks if the current day cash on hand is more than previous day cash on hand, exlcuding the first day
             elif cash_on_hand > prev_day_cash and prev_day_cash != 0:
                 COH_surplus = cash_on_hand - prev_day_cash
                 if COH_surplus > COH_highest_surplus:
