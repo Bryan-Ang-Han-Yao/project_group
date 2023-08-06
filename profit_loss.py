@@ -23,3 +23,7 @@ def Profit_and_Loss_identifier():
             if net_profit < prev_day_net_profit and prev_day_net_profit != 0:
 
                 net_profit_deficit = prev_day_net_profit - net_profit
+
+                net_profit_deficit_details = [day, net_profit_deficit]
+
+                net_profit_deficit_days.append(net_profit_deficit_details)
