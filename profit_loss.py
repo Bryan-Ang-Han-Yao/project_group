@@ -27,3 +27,15 @@ def Profit_and_Loss_identifier():
                 net_profit_deficit_details = [day, net_profit_deficit]
 
                 net_profit_deficit_days.append(net_profit_deficit_details)
+
+            elif net_profit > prev_day_net_profit and prev_day_net_profit != 0:
+
+                net_profit_surplus = net_profit - prev_day_net_profit
+
+                if net_profit_surplus > net_profit_highest_surplus:
+
+                    net_profit_highest_surplus = net_profit_surplus
+
+                    net_profit_highest_surplus_day = row[0]
+
+            prev_day_net_profit = net_profit
