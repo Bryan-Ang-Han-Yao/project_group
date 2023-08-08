@@ -26,18 +26,25 @@ def Profit_and_Loss_identifier():
         # Create a variable to store the highest surplus in Net Profit
         net_profit_highest_surplus = 0
 
+        # To iterate through the CSV file
         for row in csv_reader:
             
+            # To retrive day number and convert it into an integer
             day = int(row[0])
 
+            # To retrive net profit amount and convert it into an integer
             net_profit = int(row[4])
 
+            # Checks if the current day net profit is less than previous day net profit, exlcuding the first day
             if net_profit < prev_day_net_profit and prev_day_net_profit != 0:
 
+                # To calculate the deficit between two days
                 net_profit_deficit = prev_day_net_profit - net_profit
 
+                # To store the the details of the deficit net profit by, "day", "net_profit_deficit"
                 net_profit_deficit_details = [day, net_profit_deficit]
 
+                # Appends the net profits deficits into a list
                 net_profit_deficit_days.append(net_profit_deficit_details)
 
             elif net_profit > prev_day_net_profit and prev_day_net_profit != 0:
