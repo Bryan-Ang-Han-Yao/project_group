@@ -39,3 +39,17 @@ def Profit_and_Loss_identifier():
                     net_profit_highest_surplus_day = row[0]
 
             prev_day_net_profit = net_profit
+
+        if len(net_profit_deficit_days) == 0:
+
+            return f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n[HIGHEST NET PROFIT SURPLUS] DAY: {net_profit_highest_surplus_day}, AMOUNT: USD{net_profit_highest_surplus}"
+        
+        else:
+
+            output = ""
+
+            for day in net_profit_deficit_days:
+
+                output += f"[PROFIT DEFICIT] DAY: {day[0]}, AMOUNT: USD{day[1]}\n"
+
+                return output
