@@ -47,14 +47,20 @@ def Profit_and_Loss_identifier():
                 # Appends the net profits deficits into a list
                 net_profit_deficit_days.append(net_profit_deficit_details)
 
+            # Checks if the current day net profit is more than previous day net profit, exlcuding the first day
             elif net_profit > prev_day_net_profit and prev_day_net_profit != 0:
 
+                # To calculate the surplus between two days
                 net_profit_surplus = net_profit - prev_day_net_profit
 
+                # Checks if surplus is more than current highest surplus
                 if net_profit_surplus > net_profit_highest_surplus:
 
+                    # Set the new highest surplus
                     net_profit_highest_surplus = net_profit_surplus
 
+                    # Retrive the day of the highest surplus
                     net_profit_highest_surplus_day = row[0]
 
+            # Set new previous day
             prev_day_net_profit = net_profit
