@@ -11,4 +11,9 @@ wp = Path.cwd()/"summary_report.txt"
 
 # Opening the file in write mode ("w") and specifying "UTF-8" as the character encoding for the file
 with wp.open(mode = "w", encoding = "UTF-8") as file:
+
+    # Write final output from the modularized functions to the "summary_report.txt" file
+    file.write(overheads_value)
+    file.write(cash_on_hand_value)
+    file.write(net_profit_value)
     
