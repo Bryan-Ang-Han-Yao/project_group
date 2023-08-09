@@ -16,4 +16,7 @@ with wp.open(mode = "w", encoding = "UTF-8") as file:
     file.write(overheads_value)
     file.write(cash_on_hand_value)
     file.write(net_profit_value)
+
+    # Closing the file to to ensure that it is properly saved
+    file.close()
     
