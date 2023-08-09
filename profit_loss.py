@@ -2,7 +2,7 @@ from pathlib import Path
 import csv
 
 # Creates a path to csv file
-file_path = Path.cwd()/"csv_reports"/"Test (Profits).csv"
+file_path = Path.cwd()/"csv_reports"/"Profits_and_Loss.csv"
 
 def Profit_and_Loss_identifier():
     """
