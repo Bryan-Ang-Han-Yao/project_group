@@ -9,6 +9,9 @@ net_profit_value = profit_loss.Profit_and_Loss_identifier()
 # Declaring a variable to represent the full path to the "summary_report.txt" file in the current working directory
 wp = Path.cwd()/"summary_report.txt"
 
+# Creates the 'summary_report.txt' file if it does not exist
+wp.touch()
+
 # Opening the file in write mode ("w") and specifying "UTF-8" as the character encoding for the file
 with wp.open(mode = "w", encoding = "UTF-8") as file:
 
