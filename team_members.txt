@@ -2,7 +2,7 @@ S/N, Team Members, Student ID:
 1. Bryan Ang Han Yao, S10262640B
 2. Loh Sum Neng, Nynn, S10257411H
 3. Natalee Low, S10258447K
-4. Nuh, S10259340E
+4. Nuh Bin Ahmad Zuhairi, S10259340E
 5. Chia Junxiang Marcus, S10262064H
 
 Github Collaboration Link: https://github.com/Bryan-Ang-Han-Yao/project_group.git
